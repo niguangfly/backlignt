@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+	<script type="text/javascript">
+		//存入本地存储
+		function setLocalstorage(key, value) {
+			var times = new Date().getTime();
+			localStorage.setItem(name=key, JSON.stringify({
+				value: value,
+				time: times
+			}))
+		}
+//		setLocalstorage("sex","男")
+		
+		//获取本地存储
+		function getLocalstorage(key,exp){
+			var times=new Date().getTime();
+			var data=JSON.parse(localStorage.getItem(key));
+			console.log(data.time)
+			if(times-data.time>exp){
+				alert("你存入的内容已过期");
+			}else{
+				return JSON.parse(localStorage.getItem(key))
+			}
+		}
+		console.log(getLocalstorage('sex',2753))
+	</script>
+
+</html>
