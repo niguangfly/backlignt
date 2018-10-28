@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //设置时间
+    var date=new Date();
+    var day=date.getDate();
+    date.setDate(day+1)
+
+    //存入cookie
+    document.cookie="name=meng；expire="+date;
+    document.cookie="age=18";
+
+    //获取cookie
+    console.log(document.cookie);
+
+    //将字符串转化为一组乱码
+    console.log(encodeURI("残梦不完"))//%E6%AE%8B%E6%A2%A6%E4%B8%8D%E5%AE%8C
+    console.log(decodeURI('%E6%AE%8B%E6%A2%A6%E4%B8%8D%E5%AE%8C'))
+</script>
+</html>
